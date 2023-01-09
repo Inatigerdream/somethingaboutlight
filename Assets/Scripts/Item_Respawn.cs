@@ -14,7 +14,7 @@ public class Item_Respawn : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.name == "Beam")
+        if(other.gameObject.name == "GlowingCircle")
         {
             spawnposition = other.gameObject.transform.position;
         }

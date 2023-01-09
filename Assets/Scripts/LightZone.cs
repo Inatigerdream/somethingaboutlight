@@ -8,8 +8,6 @@ public class LightZone : MonoBehaviour
     public GameObject light;
     [SerializeField] AudioClip[] _sounds;
 
-
-
     void OnTriggerEnter(Collider other)
     {
 

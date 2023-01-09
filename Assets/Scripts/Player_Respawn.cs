@@ -12,14 +12,14 @@ using UnityEngine;
         // Start is called before the first frame update
         void Awake()
         {
-            spawnposition = gameObject.transform.position;
+            spawnposition = gameObject.transform.position + new Vector3(0, 1, 0);
         }
 
         void OnTriggerEnter(Collider other)
         {
-            if(other.gameObject.name == "Beam")
+            if(other.gameObject.name == "GlowingCircle")
             {
-                spawnposition = other.gameObject.transform.position;
+                spawnposition = other.gameObject.transform.position + new Vector3(0, 1, 0);
                 // Debug.Log(spawnposition);
             }
 
@@ -28,6 +28,7 @@ using UnityEngine;
         {
             if(other.gameObject.name == "DeadZone")
             {
+                // Debug.Log("Player Respawn");
                 gameObject.transform.position = spawnposition;
                 // gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
                 // GetComponent<AudioSource>().PlayOneShot(_sounds[0]);
