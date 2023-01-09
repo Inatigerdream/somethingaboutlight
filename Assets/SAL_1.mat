@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CTVR_1_hover
+  m_Name: SAL_1
   m_Shader: {fileID: -6465566751694194690, guid: e232f41c162e2144c9ca78b2af8f7cad,
     type: 3}
   m_ValidKeywords: []
@@ -103,7 +103,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _EnvironmentReflections: 1
-    - _Fresnel: 0.8
+    - _Fresnel: 0.7
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
@@ -113,7 +113,8 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Saturation: 1
+    - _Satuation: 0.7
+    - _Saturation: 0.7
     - _Smoothness: 0.217
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1

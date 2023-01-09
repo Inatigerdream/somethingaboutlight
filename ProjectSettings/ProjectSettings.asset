@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: Simulacra and Simulation
-  productName: Crypto Terminal VR
+  productName: Something About Light
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -176,6 +176,7 @@ PlayerSettings:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -195,7 +196,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.SimulacraandSimulation.CryptoTerminalVR
+    Android: com.SimulacraandSimulation.SomethingAboutLight
     Standalone: com.Simulacra-and-Simulation.Crypto-Terminal-VR
   buildNumber:
     Standalone: 0
@@ -314,7 +315,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: e21b84bd9dbaf0d44b077d3e017e4d53, type: 3}
+      m_Icon: {fileID: 2800000, guid: 38236a82ff44aaa4b972248479d5f970, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0

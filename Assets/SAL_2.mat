@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CTVR_2
+  m_Name: SAL_2
   m_Shader: {fileID: -6465566751694194690, guid: 87063eac816dbb749b26b6bc9d762203,
     type: 3}
   m_ValidKeywords: []

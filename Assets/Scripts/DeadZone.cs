@@ -17,7 +17,7 @@ public class DeadZone : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.name == "HeadCollision")
+        if(other.gameObject.name == "PlayerController")
         {
             //play sound
             audioData.Play();
