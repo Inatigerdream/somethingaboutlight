@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using BNG;
 
 
     public class Player_Respawn : MonoBehaviour
     {
-        Vector3 spawnposition;
+        public Vector3 spawnposition;
         private float timer = 0;
         [SerializeField] AudioClip[] _sounds;
 
