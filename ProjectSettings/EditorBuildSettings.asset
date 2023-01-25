@@ -13,11 +13,11 @@ EditorBuildSettings:
     guid: 92f38d34fb3a5714795f0a24b900f3f5
   - enabled: 0
     path: 
-    guid: 7494f44102aa8b04e8bd03b4a5b8e08c
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: 
-    guid: f6be583b886dfc24cae77047fc64dc23
-  - enabled: 1
+    guid: 00000000000000000000000000000000
+  - enabled: 0
     path: Assets/Scenes/SomethingAboutLight_L1.unity
     guid: 4f3eec73e0c2eba438966731f7723538
   - enabled: 1
