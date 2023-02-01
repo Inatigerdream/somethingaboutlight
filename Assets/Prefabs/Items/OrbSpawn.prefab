@@ -312,6 +312,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Orb
       objectReference: {fileID: 0}
+    - target: {fileID: 2814278547877488816, guid: 8b8746c815e84a54b800ff881a6de982,
+        type: 3}
+      propertyPath: m_TagString
+      value: Items
+      objectReference: {fileID: 0}
     - target: {fileID: 2814278548480379758, guid: 8b8746c815e84a54b800ff881a6de982,
         type: 3}
       propertyPath: m_Materials.Array.data[0]

@@ -441,7 +441,7 @@ GameObject:
   - component: {fileID: 7368394654991229656}
   m_Layer: 10
   m_Name: GlowStick
-  m_TagString: Untagged
+  m_TagString: Items
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
