@@ -1,11 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.Events;
+using UnityEngine.Events;
+using BNG;
 
 public class OrbCatch : MonoBehaviour
 {
     AudioSource audioData;
     private GameObject GFX;
+
+    // [Header("Orb Catch")]
+    // # make an event on orbPlace
+    public UnityEvent OnOrbPlace;
+
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +36,7 @@ public class OrbCatch : MonoBehaviour
             // GFX.SetActive(true);
             //play audiosource
             audioData.Play();
+            OnOrbPlace.Invoke();
 
 
         };
