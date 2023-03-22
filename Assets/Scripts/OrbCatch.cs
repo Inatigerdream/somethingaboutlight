@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
-using UnityEngine.Events;
 using BNG;
 
 public class OrbCatch : MonoBehaviour
@@ -27,7 +26,6 @@ public class OrbCatch : MonoBehaviour
         // Debug.Log(other);
         if (other.gameObject.name == "Orb"){
             // Debug.Log("orb");
-            other.gameObject.SetActive(false);
             //playing the animation
             this.gameObject.transform.GetChild(0).gameObject.SetActive(true);
             this.gameObject.transform.GetChild(1).gameObject.SetActive(true);
@@ -36,7 +34,10 @@ public class OrbCatch : MonoBehaviour
             //play audiosource
             audioData.Play();
             OnOrbPlace.Invoke();
+           // disable sphere collider
+            gameObject.GetComponent<SphereCollider>().enabled = false;
 
+            // this.gameObject.GetComponent<SphereCollider>.SetActive(false);
 
         };
 

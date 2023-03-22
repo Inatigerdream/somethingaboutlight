@@ -14,15 +14,27 @@ public class Item_Respawn : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.name == "GlowingCircle")
-        {
-            spawnposition = other.gameObject.transform.position;
-        }
+        // if(other.gameObject.name == "GlowingCircle")
+        // {
+        //     spawnposition = other.gameObject.transform.position;
+        // }
 
         if(other.gameObject.name == "DeadZone")
         {
             gameObject.transform.position = spawnposition;
             gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
         }
+    }
+
+    //change respawn position and respawn gameobject
+    public void Respawn(GameObject empty)
+    {
+        //remove any parents
+        // gameObject.transform.parent = null;
+
+        spawnposition = empty.transform.position;
+        gameObject.transform.position = spawnposition;
+        gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        
     }
 }
