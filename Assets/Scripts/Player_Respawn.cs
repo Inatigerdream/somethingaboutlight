@@ -36,5 +36,11 @@ using BNG;
             }
         }
 
+        public void Respawn()
+        {
+            gameObject.transform.position = spawnposition;
+            AudioClip clip = _sounds[0];
+        }
+
     
     }

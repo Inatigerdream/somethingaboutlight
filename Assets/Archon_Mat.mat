@@ -20,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Alpha_plant
-  m_Shader: {fileID: -6465566751694194690, guid: abf9d4777b6ae8847a27e1a28c94e412,
+  m_Name: Archon_Mat
+  m_Shader: {fileID: -6465566751694194690, guid: b792984901062fe44b899730c14f6430,
     type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -97,8 +97,10 @@ Material:
     m_Ints: []
     m_Floats:
     - _AlphaClip: 0
-    - _Alpha_clip: 0.44
-    - _Apha_select: 4.1
+    - _Alpha_clip: 0.67
+    - _Apha_select: 1.17
+    - _Apha_select_add: 4
+    - _Apha_select_mag: 3
     - _Blend: 0
     - _BumpScale: 1
     - _ClearCoatMask: 0

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using BNG;
 
 public class ChaseAI : MonoBehaviour
@@ -7,19 +8,19 @@ public class ChaseAI : MonoBehaviour
     public float chaseDistance = 10f;
     public float moveSpeed = 5f;
     public float rotateSpeed = 5f;
+    public float thresholdspeed = 3f;
 
-    private Rigidbody rb;
-    private Rigidbody playerController;
-    private Vector3 lastPlayerPosition;
+    public UnityEvent ArchonKill;
 
+    private Rigidbody rb; // rigidbody of the enemy
+    private Rigidbody playerController; //rigidbody of the player
+    private Vector3 lastPlayerPosition; // last position of the player
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         playerController = player.GetComponent<Rigidbody>();
         lastPlayerPosition = player.position;
-
-        
     }
 
     private void FixedUpdate()
@@ -37,7 +38,7 @@ public class ChaseAI : MonoBehaviour
 
             Debug.Log(currentSpeed);
 
-            if (currentSpeed > 0f)
+            if (currentSpeed > thresholdspeed)
             {
                 Debug.Log("moving");
                 Vector3 moveDirection = direction * currentSpeed;
@@ -45,13 +46,13 @@ public class ChaseAI : MonoBehaviour
             }
         }
 
-        // // change shader characteristics
-        // if (distanceToPlayer < 5f)
-        // {
-        //     GetComponent<Renderer>().material.SetFloat("Alpha_select", Mathf.Sin(Time.time * 0.03f)+2f);
-        // }
-
         lastPlayerPosition = player.position;
-
     }
+    // void OnTriggerEnter(Collider other) {
+    //     // Debug.Log(other);
+    //     ArchonKill.Invoke();
+
+    //     }
+
+    
 }
