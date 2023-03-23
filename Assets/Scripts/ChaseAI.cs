@@ -6,6 +6,7 @@ public class ChaseAI : MonoBehaviour
 {
     public GameObject mainlight;
     public Transform player;
+
     public float chaseDistance = 10f;
     public float moveSpeed = 5f;
     public float rotateSpeed = 5f;
@@ -17,9 +18,7 @@ public class ChaseAI : MonoBehaviour
     private Vector3 destination;
     private bool chasingPlayer;
 
-    public UnityEvent ArchonKill;
-
-
+    public UnityEvent ArchonKill; //onkillevents
 
     private Rigidbody rb; // rigidbody of the enemy
     private Rigidbody playerController; //rigidbody of the player
@@ -32,30 +31,16 @@ public class ChaseAI : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         playerController = player.GetComponent<Rigidbody>();
         lastPlayerPosition = player.position;
-        spawnPosition = transform.position;
-        // agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-        
+        spawnPosition = transform.position;        
         currentPatrolPoint = 0;
         SetNextPatrolPoint();
     }
-
-    void SetNextPatrolPoint()
-    {
-        if (patrolPoints.Length == 0)
-        {
-            Debug.Log("No patrol points assigned to enemy");
-            return;
-        }
-
-        destination = patrolPoints[currentPatrolPoint].position;
-        currentPatrolPoint = (currentPatrolPoint + 1) % patrolPoints.Length;
-    }
-
 
     private void FixedUpdate()
     {
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
+        // if the player is in the light, the enemy will respawn
         if (mainlight.active == true) {
             transform.position = spawnPosition;
             chasingPlayer = false;
@@ -63,12 +48,11 @@ public class ChaseAI : MonoBehaviour
 
         float currentSpeed = (player.position - lastPlayerPosition).magnitude / Time.deltaTime;
 
+        //patrolling behaviour
         if (!chasingPlayer)
         {
-            // Debug.Log("Patrolling" + destination);
             if (Vector3.Distance(destination, transform.position) < 0.05f)
             {
-                // Debug.Log("Reached patrol point");
                 SetNextPatrolPoint();
             }
             Vector3 direction = (destination - transform.position).normalized;
@@ -79,20 +63,19 @@ public class ChaseAI : MonoBehaviour
             rb.MovePosition(transform.position + moveDirection * moveSpeed * Time.deltaTime);
         }
 
+        //chasing behaviour
         if (distanceToPlayer < chaseDistance && chasingPlayer)
         {
             Vector3 direction = (player.position - transform.position).normalized;
             Quaternion lookRotation = Quaternion.LookRotation(direction)*Quaternion.Euler(90, 0, 0);
             rb.MoveRotation(Quaternion.Slerp(transform.rotation, lookRotation, rotateSpeed * Time.deltaTime));
 
-            // float currentSpeed = playerController.velocity.magnitude;
+            // Vector3 moveDirection = direction * currentSpeed;
+            rb.MovePosition(transform.position + direction * moveSpeed * currentSpeed * Time.deltaTime);
 
-            // if (currentSpeed > thresholdspeed)
-            // {
-            Vector3 moveDirection = direction * currentSpeed;
-            rb.MovePosition(transform.position + moveDirection * moveSpeed * Time.deltaTime);
-            // }
         }
+
+        //initiate chasing behaviour
         if (distanceToPlayer < chaseDistance && currentSpeed > thresholdspeed && !chasingPlayer)
         {
             chasingPlayer = true;
@@ -100,14 +83,27 @@ public class ChaseAI : MonoBehaviour
 
         lastPlayerPosition = player.position;
     }
-    void OnTriggerEnter(Collider other) {
-        
+
+    // when the enemy collides with the player set respawn
+    void OnTriggerEnter(Collider other)
+    { 
         if (other.gameObject.name == "PlayerController"){
             ArchonKill.Invoke();
 
         }
-
+    }
+    
+    // enemy will patrol between the patrol points
+    void SetNextPatrolPoint()
+    {
+        if (patrolPoints.Length == 0)
+        {
+            Debug.Log("No patrol points assigned to enemy");
+            return;
         }
+    destination = patrolPoints[currentPatrolPoint].position;
+    currentPatrolPoint = (currentPatrolPoint + 1) % patrolPoints.Length;
+    }
 
     
 }
