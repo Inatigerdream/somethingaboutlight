@@ -38,4 +38,8 @@ public class FootstepController : MonoBehaviour
         audioSource.clip = footstepSounds[soundIndex];
         audioSource.Play();
     }
+    void OnTriggerExit(Collider other)
+    {
+       audioSource.Play();
+    }
 }

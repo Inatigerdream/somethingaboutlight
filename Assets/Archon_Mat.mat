@@ -97,10 +97,10 @@ Material:
     m_Ints: []
     m_Floats:
     - _AlphaClip: 0
-    - _Alpha_clip: 0.67
+    - _Alpha_clip: 1
     - _Apha_select: 1.17
     - _Apha_select_add: 4
-    - _Apha_select_mag: 3
+    - _Apha_select_mag: 11
     - _Blend: 0
     - _BumpScale: 1
     - _ClearCoatMask: 0
