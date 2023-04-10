@@ -22,12 +22,9 @@ public class DeadZone : MonoBehaviour
             //play sound
             audioData.Play();
         }
-        // return all gameobjects with items tag to their original position
-
-        // Debug.Log(other.gameObject.tag);
-        // if(other.gameObject.tag == "items")
         else
         {
+
             // Debug.Log("item");
             other.gameObject.transform.localPosition = Vector3.zero;
             other.gameObject.transform.localRotation = Quaternion.identity;
