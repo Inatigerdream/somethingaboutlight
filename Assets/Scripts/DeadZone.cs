@@ -28,7 +28,16 @@ public class DeadZone : MonoBehaviour
             // Debug.Log("item");
             other.gameObject.transform.localPosition = Vector3.zero;
             other.gameObject.transform.localRotation = Quaternion.identity;
-            other.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            //try to reset velocity
+            try
+            {
+                other.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            }
+            catch
+            {
+                Debug.Log("no rigidbody");
+            }
+
         }
 
         // return all gameobjects with items tag to their original position
