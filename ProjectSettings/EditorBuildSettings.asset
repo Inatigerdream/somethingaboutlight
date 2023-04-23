@@ -23,6 +23,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/L2_SomethingAboutLight.unity
     guid: c00c103b6c1dec649891d7bdcdf41cc0
+  - enabled: 1
+    path: Assets/Scenes/L1_SomethingAboutLight.unity
+    guid: eae9c222fc86d0840be3706e62dbb711
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 706530e5cea9c9048a540c6c36b2ce85,
       type: 2}
